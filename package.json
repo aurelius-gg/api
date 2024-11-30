@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node-cron": "^3.0.11",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.28.1",
+    "tsx": "^4.19.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/static": "^1.1.1",
+    "chalk": "^5.3.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.4",
+    "elysia": "^1.1.25",
+    "node-cron": "^3.0.3",
+    "oslo": "^1.2.1",
+    "pg": "^8.13.1",
+    "redis": "^4.7.0",
+    "zod": "^3.23.8"
+  }
+}
