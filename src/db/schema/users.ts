@@ -1,12 +1,13 @@
-import { integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 import { createId } from "../../utils";
 
-export const userTable = pgTable(`users`, {
+export const userTable = pgTable("users", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  email: text(`email`).notNull(),
-  password: text(`encrypted_password`).notNull(),
-  permissions: text(`permissions`).array(),
-  auth_token: text(`authorization_token`)
+  email: text("email"),
+  system: boolean("system_user").default(false),
+  password: text("encrypted_password"),
+  permissions: text("permissions").array(),
+  auth_token: text("authorization_token")
     .notNull()
     .$defaultFn(() => createId()),
   updated_at: timestamp(),

@@ -1,15 +1,7 @@
-# api
+![Europa Banner](http://cdn.aurelius.gg/u/JVgLi8.png)
 
-To install dependencies:
+# Europa
 
-```bash
-bun install
-```
+Build to home my microservices allowing them to be access through an API. 
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.34. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+- Providing my own custom general use auth allowing for user accounts to be shared between my projects and for me to easily add professional authentication that isnt relient on a third-party provider.

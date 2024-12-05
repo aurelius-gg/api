@@ -15,6 +15,27 @@
       "when": 1732915732163,
       "tag": "0001_milky_sleeper",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1733145362805,
+      "tag": "0002_whole_cannonball",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1733303268875,
+      "tag": "0003_equal_rocket_racer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1733308112811,
+      "tag": "0004_woozy_avengers",
+      "breakpoints": true
     }
   ]
 }

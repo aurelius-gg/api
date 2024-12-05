@@ -1,7 +1,5 @@
+import { databaseUrl } from "@/utils";
 import "dotenv/config";
 import { drizzle } from "drizzle-orm/node-postgres";
-import * as userSchemas from "./schema/users";
 
-export const db = drizzle(process.env.DATABASE_URL!, {
-  schema: { ...userSchemas },
-});
+export const db = drizzle(`postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/europa_postgres`);

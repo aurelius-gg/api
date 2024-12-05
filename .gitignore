@@ -1,5 +1,12 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
+**/node_modules
+**/.env
+**/.env.*
+!**/.env.example
+drizzle/*
+drizzle/**/*
+
 # Logs
 
 logs

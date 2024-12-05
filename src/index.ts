@@ -1,8 +1,9 @@
-import { Elysia } from "elysia";
-import { defaultRoutes, http_logger, info_log } from "./utils";
-import { core } from "./core";
-import { redisClient } from "./utils/redis";
 import staticPlugin from "@elysiajs/static";
+import { Elysia } from "elysia";
+import { core } from "./core";
+import { defaultRoutes, http_logger, info_log } from "./utils";
+import { redisClient } from "./utils/redis";
+import { $ } from "bun";
 
 export const app = new Elysia()
   .use(http_logger)
@@ -19,8 +20,9 @@ export const app = new Elysia()
       hostname: "0.0.0.0",
     },
     async () => {
+      $`bun run db:update`
       await redisClient.connect().then(() => {
-        info_log(`Connected to redis client.`);
+        info_log("Connected to redis client.");
       });
       info_log("Listening on 0.0.0.0:3724");
     }

@@ -6,8 +6,8 @@ export * from "./logger";
 export * from "./middleware";
 export * from "./auth";
 
-export const createId = (length: number = 35) => {
-  let chars =
+export const createId = (length = 35) => {
+  const chars =
     "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890-_";
   let str = "";
   for (let i = 0; i < length; i++) {
@@ -49,19 +49,24 @@ export const parseRequestBody = async <T>(
   };
 };
 
-export const defaultRoutes = new Elysia().get(`/`, () => ({
+export const defaultRoutes = new Elysia().get("/", () => ({
   ok: false,
-  message: `Invalid prefix provided.`,
+  message: "Invalid prefix provided.",
   valid_prefixes: {
-    "/v1/*": [`/v1/auth/*`],
+    "/v1/*": ["/v1/auth/*"],
   },
 }));
+
+export const redisUrl = (): string =>
+  `redis://${process.env.REDIS_USER}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_PORT}:${process.env.REDIS_HOST}`;
+export const databaseUrl = (): string =>
+  `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/europa_postgres`;
 
 export const defaultResponses = {
   no_body: new Response(
     JSON.stringify({
       ok: false,
-      message: `Failed to parse json.`,
+      message: "Failed to parse json.",
     }),
     {
       status: 500,
@@ -70,7 +75,7 @@ export const defaultResponses = {
   invalid_auth: new Response(
     JSON.stringify({
       ok: false,
-      message: `Invalid authorization token.`,
+      message: "Invalid authorization token.",
     }),
     {
       status: 404,

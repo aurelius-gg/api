@@ -6,6 +6,7 @@ export const PERMISSIONS = [
   "user:delete",
   "user:modify",
   "admin:all",
+  "system:*",
 ] as const;
 export type Permission = (typeof PERMISSIONS)[number];
 

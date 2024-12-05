@@ -3,7 +3,9 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run ./src/index.ts"
+    "dev": "bun run ./src/index.ts",
+    "start": "sleep 10; bun run ./scripts/seed.ts && bun run ./src/index.ts",
+    "db:update": "bunx drizzle-kit push && bunx drizzle-kit generate && bunx drizzle-kit pull"
   },
   "devDependencies": {
     "@types/bun": "latest",
